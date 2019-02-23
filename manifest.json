@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+
+    "name": "极客时间小插件",
+    "version": "0.1",
+    "description": "目前只能把音频位置提到顶部，并且出现音频滑动条，记得进入文章页面后刷新一下",
+
+    "permissions": [
+        "https://time.geekbang.org/"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "进入文章页面后要刷新一下哦"
+    },
+    "content_scripts": [{
+        "matches": ["http://time.geekbang.org/column/article/*", "https://time.geekbang.org/column/article/*"],
+        "js": ["jquery.min.js", "main.js"],
+        "css": ["main.css"],
+        "run_at": "document_start"
+    }]
+}
